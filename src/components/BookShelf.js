@@ -1,6 +1,12 @@
 import Book from './Book';
 
-const BookShelf = ({ title, books, shelfName, onChangeShelf }) => {
+const BookShelf = ({
+  title,
+  books,
+  shelfName,
+  onChangeShelf,
+  onHandleLookup,
+}) => {
   return (
     <div className="bookshelf">
       <h2 className="bookshelf-title">{title}</h2>
@@ -15,6 +21,7 @@ const BookShelf = ({ title, books, shelfName, onChangeShelf }) => {
                     book={b}
                     onChangeShelf={onChangeShelf}
                     existing={true}
+                    onHandleLookup={onHandleLookup}
                   />
                 </li>
               );
