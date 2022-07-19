@@ -7,6 +7,7 @@ const Search = ({
   existingBooks,
   onHandleSearch,
   onChangeShelf,
+  onHandleLookup,
 }) => {
   const [Value, setValue] = useState('');
 
@@ -48,12 +49,14 @@ const Search = ({
                     }
                     onChangeShelf={onChangeShelf}
                     existing={true}
+                    onHandleLookup={onHandleLookup}
                   />
                 ) : (
                   <Book
                     book={book}
                     onChangeShelf={onChangeShelf}
                     existing={false}
+                    onHandleLookup={onHandleLookup}
                   />
                 )}
               </li>
