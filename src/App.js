@@ -4,10 +4,12 @@ import * as Operation from './util/BooksAPI';
 import { useState, useEffect } from 'react';
 import Search from './pages/Search';
 import MyReads from './pages/MyReads';
+import About from './pages/About';
 
 function App() {
   const [Searched, setSearched] = useState([]);
   const [Books, setBooks] = useState([]);
+  const [BookID, setBookID] = useState('');
 
   const onChangeShelf = async (shelf, bookObj, exist) => {
     if (exist) {
@@ -38,6 +40,10 @@ function App() {
     }
   };
 
+  const onHandleLookup = (BookID) => {
+    setBookID(BookID);
+  };
+
   useEffect(() => {
     const getBooks = async () => {
       const books = await Operation.getAll();
@@ -57,14 +63,22 @@ function App() {
             existingBooks={Books}
             onHandleSearch={onHandleSearch}
             onChangeShelf={onChangeShelf}
+            onHandleLookup={onHandleLookup}
           />
         }
       />
       <Route
         exact
         path="/"
-        element={<MyReads Books={Books} onChangeShelf={onChangeShelf} />}
+        element={
+          <MyReads
+            Books={Books}
+            onChangeShelf={onChangeShelf}
+            onHandleLookup={onHandleLookup}
+          />
+        }
       />
+      <Route path="/about" element={<About bookID={BookID} />} />
     </Routes>
   );
 }
