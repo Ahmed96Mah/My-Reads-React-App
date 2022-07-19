@@ -1,7 +1,12 @@
+import { Link } from 'react-router-dom';
 import SelectNew from './SelectNew';
 import SelectShelf from './SelectShelf';
 
-const Book = ({ book, onChangeShelf, existing }) => {
+const Book = ({ book, onChangeShelf, existing, onHandleLookup }) => {
+  const handleClick = () => {
+    onHandleLookup(book['id']);
+  };
+
   return (
     // This ensures that any book without a thumbnail doesn't get created (no returned component)
     book['imageLinks'] !== undefined && (
@@ -13,6 +18,7 @@ const Book = ({ book, onChangeShelf, existing }) => {
               width: 128,
               height: 193,
               backgroundImage: `url(${book['imageLinks']['thumbnail']})`,
+              backgroundSize: 'cover',
             }}
           ></div>
           <div className="book-shelf-changer">
@@ -30,9 +36,22 @@ const Book = ({ book, onChangeShelf, existing }) => {
               />
             )}
           </div>
+          <div className="about" onClick={handleClick}>
+            <Link to="/about">?</Link>
+          </div>
         </div>
         <div className="book-title">{book['title']}</div>
-        <div className="book-authors">{book['authors']}</div>
+        <div className="book-authors">
+          {book['authors'] !== undefined ? (
+            book['authors'].map((author, index) => (
+              <span key={index}>
+                {index < book['authors'].length - 1 ? `${author}, ` : author}
+              </span>
+            ))
+          ) : (
+            <span></span>
+          )}
+        </div>
       </div>
     )
   );
