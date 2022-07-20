@@ -45,12 +45,20 @@ function App() {
   };
 
   useEffect(() => {
+    let mounted = true;
+
     const getBooks = async () => {
       const books = await Operation.getAll();
-      setBooks(books);
+      if(mounted){
+        setBooks(books);
+      }
     };
 
     getBooks();
+    
+    return () => {
+      mounted = false;
+    };
   }, []);
 
   return (
