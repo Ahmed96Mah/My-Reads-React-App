@@ -8,12 +8,20 @@ const About = ({ bookID }) => {
   const [Book, setBook] = useState([]);
 
   useEffect(() => {
+    let mounted = true;
+
     const getBook = async () => {
       const book = await Operation.get(bookID);
-      setBook([book]);
+      if(mounted){
+        setBook([book]);
+      }
     };
 
     Book.length === 0 && getBook();
+    
+    return () => {
+      mounted = false;
+    };
   }, [bookID, Book]);
 
   return Book[0] !== undefined ? (
