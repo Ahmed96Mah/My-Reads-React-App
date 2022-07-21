@@ -14,8 +14,8 @@ function App() {
 
   const onChangeShelf = async (shelf, bookObj, exist) => {
     if (exist) {
-      const book = Books.filter((b) => b['title'] === bookObj['title']);
-      const updatedBooks = Books.filter((b) => b['title'] !== bookObj['title']);
+      const book = Books.filter((b) => b['id'] === bookObj['id']);
+      const updatedBooks = Books.filter((b) => b['id'] !== bookObj['id']);
       book[0]['shelf'] = shelf;
       setBooks([...updatedBooks, ...book]);
     } else {
