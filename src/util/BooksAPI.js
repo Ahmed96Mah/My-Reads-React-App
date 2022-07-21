@@ -53,8 +53,15 @@ export const search = (query, maxResults) =>
 export const createUser = (user) => {
   const userToken = Math.random().toString(36).substring(-8);
   if (user.username !== "" && user.email !== "" && user.password !== "") {
-    localStorage[`user${localStorage.length}`] = `${user.username},${user.email},${user.password},${userToken}`;
-    localStorage.token = userToken;
+    const storageKeys = Object.keys(localStorage);
+    const test = storageKeys.filter((key) => key.match('user')).filter((key) => localStorage[key].split(',')[0] === user.username || localStorage[key].split(',')[1] === user.email);
+    if(test.length === 0) {
+      localStorage[`user${localStorage.length}`] = `${user.username},${user.email},${user.password},${userToken}`;
+      localStorage.token = userToken;
+      return true;
+    }else {
+      return false;
+    }
   }
 };
 
