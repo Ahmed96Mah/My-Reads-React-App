@@ -44,13 +44,12 @@ const Search = ({
                 <li key={book['id']}>
                   {existingBooks.filter(
                     (b) =>
-                      b['title'] === book['title'] &&
-                      b['authors'][0] === book['authors'][0]
+                      b["id"] === book["id"]
                   ).length === 1 ? (
                     <Book
                       book={
                         existingBooks.filter(
-                          (b) => b['title'] === book['title']
+                          (b) => b['id'] === book['id']
                         )[0]
                       }
                       onChangeShelf={onChangeShelf}
