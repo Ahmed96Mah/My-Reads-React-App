@@ -2,6 +2,14 @@ const api = 'https://reactnd-books-api.udacity.com';
 
 let token = localStorage.token;
 
+const searchforUser = () => {
+  const storageKeys = Object.keys(localStorage);
+  const test = storageKeys.filter((key) => key.match('user')).filter((key) => localStorage[key].split(',')[3] === localStorage["token"]);
+  (test.length === 0)? (localStorage.loggedIn = false):(localStorage.loggedIn = true);
+};
+
+searchforUser();
+
 if (!token)
   token = localStorage.token = Math.random().toString(36).substring(-8);
 
@@ -41,3 +49,17 @@ export const search = (query, maxResults) =>
   })
     .then((res) => res.json())
     .then((data) => data.books);
+
+export const createUser = (user) => {
+  const userToken = Math.random().toString(36).substring(-8);
+  if (user.username !== "" && user.email !== "" && user.password !== "") {
+    localStorage[`user${localStorage.length}`] = `${user.username},${user.email},${user.password},${userToken}`;
+    localStorage.token = userToken;
+  }
+};
+
+export const checkUser = (user) => {
+  const storageKeys = Object.keys(localStorage);
+  const test = storageKeys.filter((key) => key.match('user')).filter((key) => localStorage[key].split(',')[0] === user.username && localStorage[key].split(',')[2] === user.password);
+  (test.length === 1) && (localStorage.token = localStorage.getItem(test[0]).split(',')[3]);
+};
