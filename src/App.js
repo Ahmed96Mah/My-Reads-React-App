@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import Search from './pages/Search';
 import MyReads from './pages/MyReads';
 import About from './pages/About';
+import SignUp from './pages/SignUp';
 
 function App() {
   const [Searched, setSearched] = useState([]);
@@ -44,6 +45,10 @@ function App() {
     setBookID(BookID);
   };
 
+  const logout = () => {
+    localStorage.token = Math.random().toString(36).substring(-8);
+  };
+
   useEffect(() => {
     let mounted = true;
 
@@ -54,7 +59,7 @@ function App() {
       }
     };
 
-    getBooks();
+    (localStorage.loggedIn === 'true') && getBooks();
     
     return () => {
       mounted = false;
@@ -72,6 +77,8 @@ function App() {
             onHandleSearch={onHandleSearch}
             onChangeShelf={onChangeShelf}
             onHandleLookup={onHandleLookup}
+            logged={localStorage.loggedIn}
+            onlogout={logout}
           />
         }
       />
@@ -83,10 +90,13 @@ function App() {
             Books={Books}
             onChangeShelf={onChangeShelf}
             onHandleLookup={onHandleLookup}
+            logged={localStorage.loggedIn}
+            onlogout={logout}
           />
         }
       />
-      <Route path="/about" element={<About bookID={BookID} />} />
+      <Route path="/about" element={<About bookID={BookID} onlogout={logout}/>} />
+      <Route path="/signup" element={<SignUp />} />
     </Routes>
   );
 }
