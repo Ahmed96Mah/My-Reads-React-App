@@ -327,6 +327,15 @@ body,
   min-height: 80vh;
 }
 
+.form h1 {
+  margin-bottom: 2rem;
+}
+
+.form h1 span {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
 .form form {
   display: flex;
   flex-flow: column nowrap;
@@ -356,9 +365,14 @@ body,
 }
 
 .form form input {
-  width: 80%;
   margin: 0.6rem 0rem 1.3rem 0rem;
   width: 12rem;
+}
+
+.form form p {
+  font-size: 0.9rem;
+  text-align: center;
+  color: red;
 }
 
 .form .no {
