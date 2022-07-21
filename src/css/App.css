@@ -254,3 +254,138 @@ body,
 .container .about-div .about-details .info .data {
   color: #2e7d32;
 }
+
+/* login div */
+.login-div {
+  margin-top: 25vh;
+}
+
+.login-div div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-div div p {
+  font-size: 2.8rem;
+}
+
+.login-div div p span {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.login-div div a button {
+  cursor: pointer;
+  background-color: #2e7d32;
+  border: 1px solid #2e7d32;
+  border-radius: 1rem;
+  padding: 1.3rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.login-div div a button:hover {
+  color: #2e7d32;
+  background-color: white;
+}
+
+/* logout */
+.logout {
+  position: fixed;
+  right: 100px;
+  bottom: 25px;
+}
+
+.logout a {
+  fill: currentColor;
+  color: white;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #2e7d32;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.logout a svg {
+  width: 1.5rem;
+  position: relative;
+  top: 25%;
+  left: 28%;
+}
+
+/* form */
+
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.form form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5rem;
+  border: 3px solid #2e7d32;
+  border-radius: 4rem 1rem 4rem 1rem;
+  padding: 2rem 4rem;
+}
+
+.form form button {
+  cursor: pointer;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: #2e7d32;
+  border: 1px solid #2e7d32;
+  border-radius: 2rem;
+  padding: 0.7rem 2rem;
+  margin-top: 0.5rem;
+}
+
+.form form button:hover {
+  color: #2e7d32;
+  background-color: white;
+}
+
+.form form input {
+  width: 80%;
+  margin: 0.6rem 0rem 1.3rem 0rem;
+  width: 12rem;
+}
+
+.form .no {
+  font-size: 1.5rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.form .no .action {
+  color: #2e7d32;
+}
+
+.form .no button {
+  cursor: pointer;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: #2e7d32;
+  border: 1px solid #2e7d32;
+  border-radius: 2rem;
+  padding: 0.7rem 3rem;
+  margin-left: 2rem;
+}
+
+.form .no button:hover {
+  color: #2e7d32;
+  background-color: white;
+}
