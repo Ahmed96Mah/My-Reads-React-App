@@ -54,13 +54,14 @@ function App() {
 
     const getBooks = async () => {
       const books = await Operation.getAll();
-      if(mounted){
+      if (mounted) {
         setBooks(books);
       }
     };
 
-    (localStorage.loggedIn === 'true') && getBooks();
-    
+    // Make sure that user is authenticated first before data fetching
+    localStorage.loggedIn === 'true' && getBooks();
+
     return () => {
       mounted = false;
     };
@@ -95,7 +96,10 @@ function App() {
           />
         }
       />
-      <Route path="/about" element={<About bookID={BookID} onlogout={logout}/>} />
+      <Route
+        path="/about"
+        element={<About bookID={BookID} onlogout={logout} />}
+      />
       <Route path="/signup" element={<SignUp />} />
     </Routes>
   );
