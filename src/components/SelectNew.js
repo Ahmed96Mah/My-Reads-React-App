@@ -5,12 +5,13 @@ const SelectNew = ({ book, onChangeShelf, existing }) => {
 
   return (
     <select defaultValue="none" onChange={onChange}>
-      <option value="none" disabled>
+      <option value="addTo" disabled>
         Add to...
       </option>
       <option value="currentlyReading">Currently Reading</option>
       <option value="wantToRead">Want to Read</option>
       <option value="read">Read</option>
+      <option value="none">None</option>
     </select>
   );
 };
