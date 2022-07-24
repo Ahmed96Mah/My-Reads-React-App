@@ -39,7 +39,7 @@ const MyReads = ({
           />
         </div>
         <div className="open-search">
-          <Link to="/search" reloadDocument={true}>
+          <Link to="/search" reloadDocument={false}>
             Add a book
           </Link>
         </div>
