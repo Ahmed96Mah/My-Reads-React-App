@@ -428,17 +428,27 @@ body,
   }
   .container .book-title-div {
     width: 100%;
-    padding-left: 2.5rem;
+    padding-left: 2rem;
     margin: 2rem 0rem 3rem 0rem;
+  }
+  .container .book-title-div h1 {
+    font-size: 1.5rem;
+    margin-right: 2rem;
   }
   .container .about-div .about-details {
     margin-top: 2rem;
     width: 90%;
     padding-left: 1.5rem;
   }
+  .container .about-div .about-details .info {
+    margin: 1rem 1rem 1rem 0rem;
+  }
+  .container .about-div .about-details .info .title {
+    margin-right: 0.8rem;
+  }
 }
 /* flipped mobile screens */
-@media only screen and (min-width: 41.25rem) and (max-width: 53.75rem) and (max-height: 26.25rem) {
+@media only screen and (min-width: 41.25rem) and (max-width: 56.25rem) and (max-height: 26.25rem) {
   .login-div div p {
     font-size: 1.5rem;
   }
@@ -451,5 +461,9 @@ body,
   }
   .container .about-div {
     width: 90%;
+  }
+  .container .book-title-div h1 {
+    font-size: 1.5rem;
+    margin-right: 4.5rem;
   }
 }
