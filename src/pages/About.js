@@ -36,7 +36,7 @@ const About = ({ bookID, onlogout }) => {
 
       <div className="about-div">
         <div className="about-cover">
-          <img src={`${Book[0]['imageLinks']['thumbnail']}`} alt="" />
+          <img src={`https${Book[0]['imageLinks']['thumbnail'].slice(4)}`} alt="" />
         </div>
         <div className="about-details">
           <AboutDiv
