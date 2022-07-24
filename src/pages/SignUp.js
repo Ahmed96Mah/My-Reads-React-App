@@ -51,7 +51,7 @@ const SignUp = () => {
           Join <span>TODAY</span>, and keep your book activities{' '}
           <span>Up-To-Date</span>
         </h1>
-        <form action="http://localhost:3000/">
+        <form action="/My-Reads-React-App">
           <label htmlFor="username">Username: </label>
           <input
             type="text"
@@ -97,7 +97,7 @@ const SignUp = () => {
         <h1>
           <span>Already</span> Subscribed ?
         </h1>
-        <form action="http://localhost:3000/">
+        <form action="/My-Reads-React-App">
           <label htmlFor="username">Username: </label>
           <input
             type="text"
