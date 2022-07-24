@@ -38,6 +38,10 @@ The project also has the following extra features:
 - Publisher
 - Published Date
 
+### Project Link
+
+You can access the build project from (github pages) [here](https://ahmed96mah.github.io/My-Reads-React-App/)
+
 ### Project's Notes
 
 1- There is a select bookshelf component for each displayed book. The **current** value assigned to that component persists on both the home page and search page.
