@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/My-Reads-React-App/static/css/main.c77f04cb.chunk.css",
+    "main.css": "/My-Reads-React-App/static/css/main.f242705a.chunk.css",
     "main.js": "/My-Reads-React-App/static/js/main.5f186efe.chunk.js",
     "main.js.map": "/My-Reads-React-App/static/js/main.5f186efe.chunk.js.map",
     "runtime-main.js": "/My-Reads-React-App/static/js/runtime-main.9c4817f4.js",
@@ -8,14 +8,14 @@
     "static/js/2.14237ef8.chunk.js": "/My-Reads-React-App/static/js/2.14237ef8.chunk.js",
     "static/js/2.14237ef8.chunk.js.map": "/My-Reads-React-App/static/js/2.14237ef8.chunk.js.map",
     "index.html": "/My-Reads-React-App/index.html",
-    "static/css/main.c77f04cb.chunk.css.map": "/My-Reads-React-App/static/css/main.c77f04cb.chunk.css.map",
+    "static/css/main.f242705a.chunk.css.map": "/My-Reads-React-App/static/css/main.f242705a.chunk.css.map",
     "static/js/2.14237ef8.chunk.js.LICENSE.txt": "/My-Reads-React-App/static/js/2.14237ef8.chunk.js.LICENSE.txt",
     "static/media/App.css": "/My-Reads-React-App/static/media/arrow-drop-down.4378492a.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.9c4817f4.js",
     "static/js/2.14237ef8.chunk.js",
-    "static/css/main.c77f04cb.chunk.css",
+    "static/css/main.f242705a.chunk.css",
     "static/js/main.5f186efe.chunk.js"
   ]
 }
