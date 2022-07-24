@@ -416,7 +416,8 @@ body,
     font-size: 0.85rem;
   }
   .form h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    margin: 2rem 1rem 2rem 1rem;
   }
   .container .about-div {
     display: flex;
